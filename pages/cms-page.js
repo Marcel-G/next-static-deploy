@@ -53,7 +53,7 @@ const CmsPage = ({
   const pageTitle = error ? 'Oops!' : title
   return [
     <Head key={0}>
-      <title>{pageTitle} - Learning by Doing</title>
+      <title>{pageTitle} - Next Static Deploy</title>
     </Head>,
     <Page
       key={1} >
