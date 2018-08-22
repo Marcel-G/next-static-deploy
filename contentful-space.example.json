@@ -1,0 +1,1122 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "page",
+        "type": "ContentType",
+        "createdAt": "2018-08-17T19:39:59.651Z",
+        "updatedAt": "2018-08-17T19:45:29.240Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 11,
+        "firstPublishedAt": "2018-08-17T19:40:00.120Z",
+        "publishedAt": "2018-08-17T19:45:29.240Z"
+      },
+      "displayField": "route",
+      "name": "Page",
+      "description": "Website page",
+      "fields": [
+        {
+          "id": "route",
+          "name": "Route",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            },
+            {
+              "regexp": {
+                "pattern": "^\\/(\\/?[\\w-]+)*$",
+                "flags": null
+              },
+              "message": "Route should only contain lowercase letters. It should also begin with \"/\""
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "enabled",
+          "name": "Enabled",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "blocks",
+          "name": "Blocks",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "navigation",
+        "type": "ContentType",
+        "createdAt": "2018-08-17T19:47:53.243Z",
+        "updatedAt": "2018-08-17T19:47:53.683Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 1,
+        "firstPublishedAt": "2018-08-17T19:47:53.683Z",
+        "publishedAt": "2018-08-17T19:47:53.683Z"
+      },
+      "displayField": "name",
+      "name": "Navigation",
+      "description": "An ordered list of links for navigation use.",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "links",
+          "name": "Links",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": [
+                  "page"
+                ]
+              }
+            ],
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "contentAreaBlock",
+        "type": "ContentType",
+        "createdAt": "2018-08-17T19:51:44.570Z",
+        "updatedAt": "2018-08-17T19:51:44.971Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 1,
+        "firstPublishedAt": "2018-08-17T19:51:44.970Z",
+        "publishedAt": "2018-08-17T19:51:44.971Z"
+      },
+      "displayField": "name",
+      "name": "ContentAreaBlock",
+      "description": "Generic content area for headings, copy, lists, images, etc...",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "textAlign",
+          "name": "Text align",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "Left",
+                "Right",
+                "Center"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "5m7unljsll1u",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 12,
+        "createdAt": "2018-08-17T19:40:00.321Z",
+        "createdBy": {
+          "sys": {
+            "id": "0SuzUsvWYEFfJbZmdNjaNu",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2018-08-17T19:45:29.931Z",
+        "updatedBy": {
+          "sys": {
+            "id": "0SuzUsvWYEFfJbZmdNjaNu",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "page",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "route",
+          "widgetId": "singleLine"
+        },
+        {
+          "fieldId": "title",
+          "settings": {
+            "helpText": "Page title as it will be displayed in the website navigation / title bar"
+          },
+          "widgetId": "singleLine"
+        },
+        {
+          "fieldId": "enabled",
+          "settings": {
+            "helpText": "Only enabled fields will display on the site",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean"
+        },
+        {
+          "fieldId": "blocks",
+          "settings": {
+            "helpText": "List of content modules to display on the page",
+            "bulkEditing": false
+          },
+          "widgetId": "entryLinksEditor"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "5m7unljsll1u",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2018-08-17T19:47:53.895Z",
+        "createdBy": {
+          "sys": {
+            "id": "0SuzUsvWYEFfJbZmdNjaNu",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2018-08-17T19:47:54.515Z",
+        "updatedBy": {
+          "sys": {
+            "id": "0SuzUsvWYEFfJbZmdNjaNu",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "navigation",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "Name of navigation Eg. Main navigation"
+          },
+          "widgetId": "singleLine"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "slugEditor"
+        },
+        {
+          "fieldId": "links",
+          "settings": {
+            "bulkEditing": false
+          },
+          "widgetId": "entryLinksEditor"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "5m7unljsll1u",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2018-08-17T19:51:45.287Z",
+        "createdBy": {
+          "sys": {
+            "id": "0SuzUsvWYEFfJbZmdNjaNu",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2018-08-17T19:51:45.921Z",
+        "updatedBy": {
+          "sys": {
+            "id": "0SuzUsvWYEFfJbZmdNjaNu",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "contentAreaBlock",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "markdown"
+        },
+        {
+          "fieldId": "textAlign",
+          "widgetId": "dropdown"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "6EHWW14OD6uWAA6o8Ca8mo",
+        "type": "Entry",
+        "createdAt": "2018-08-17T19:51:59.336Z",
+        "updatedAt": "2018-08-22T17:28:35.872Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 12,
+        "firstPublishedAt": "2018-08-17T19:52:43.656Z",
+        "publishedAt": "2018-08-22T17:28:35.872Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "route": {
+          "en-US": "/"
+        },
+        "title": {
+          "en-US": "Home"
+        },
+        "enabled": {
+          "en-US": true
+        },
+        "blocks": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "2nWCKKR2iIgccg4iEQCG42"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "2nWCKKR2iIgccg4iEQCG42",
+        "type": "Entry",
+        "createdAt": "2018-08-17T19:52:11.030Z",
+        "updatedAt": "2018-08-22T17:28:55.560Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 6,
+        "version": 63,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 62,
+        "firstPublishedAt": "2018-08-17T19:52:25.612Z",
+        "publishedAt": "2018-08-22T17:28:55.560Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentAreaBlock"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Home_Content"
+        },
+        "content": {
+          "en-US": "# Next Static Deploy\n\nThis project shows a solution for hosting, deploying static next.js exports and allowing content updates post deployment using serverless. It's focus is to make deployments and creation of new environments as easy as possible."
+        },
+        "textAlign": {
+          "en-US": "Center"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "5QaIjRVdo4iIGkmQQUmYMw",
+        "type": "Entry",
+        "createdAt": "2018-08-17T19:52:49.681Z",
+        "updatedAt": "2018-08-22T17:33:13.990Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 19,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 18,
+        "firstPublishedAt": "2018-08-17T19:53:12.543Z",
+        "publishedAt": "2018-08-22T17:33:13.990Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "navigation"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Main Navigation"
+        },
+        "slug": {
+          "en-US": "main-navigation"
+        },
+        "links": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "6EHWW14OD6uWAA6o8Ca8mo"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "4WPELXQTVSoG4M2eiI4oqA"
+              }
+            },
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "d3m3q3DYtiSOcimSgomme"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "4WPELXQTVSoG4M2eiI4oqA",
+        "type": "Entry",
+        "createdAt": "2018-08-22T17:29:16.470Z",
+        "updatedAt": "2018-08-22T17:30:49.911Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 12,
+        "firstPublishedAt": "2018-08-22T17:30:49.911Z",
+        "publishedAt": "2018-08-22T17:30:49.911Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "route": {
+          "en-US": "/example-1"
+        },
+        "title": {
+          "en-US": "Example 1"
+        },
+        "enabled": {
+          "en-US": true
+        },
+        "blocks": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "5d6fWqkaVUCEqAOMACm8UK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "5d6fWqkaVUCEqAOMACm8UK",
+        "type": "Entry",
+        "createdAt": "2018-08-22T17:29:32.152Z",
+        "updatedAt": "2018-08-22T17:30:10.322Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 22,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 21,
+        "firstPublishedAt": "2018-08-22T17:30:10.322Z",
+        "publishedAt": "2018-08-22T17:30:10.322Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentAreaBlock"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Example1_Content"
+        },
+        "content": {
+          "en-US": "# Example Page 1\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis consectetur, leo eget vulputate consectetur, felis neque condimentum dui, nec aliquam erat quam nec lacus. Aliquam erat volutpat. Nulla vehicula libero non lobortis dignissim. Praesent varius iaculis velit quis pellentesque. Nullam bibendum euismod neque eget maximus. Nam ut pellentesque leo. Vestibulum aliquet iaculis quam at imperdiet. Integer vel tristique est, eu pellentesque mi. Ut euismod ex hendrerit lacus cursus porta. Nunc sapien neque, sodales egestas tellus vitae, interdum semper diam. Nullam sit amet scelerisque elit. Aenean at finibus tellus. Pellentesque rhoncus elit venenatis dui placerat semper. Nam porttitor lacus eget aliquam scelerisque.\n\nSed non venenatis eros. Donec efficitur, ex in tincidunt gravida, ligula quam porttitor mauris, eu imperdiet massa nunc eget ex. Vivamus aliquam dolor tellus, a semper sapien feugiat sit amet. In urna massa, auctor et odio eget, elementum pharetra ligula. Vivamus et pretium felis. Ut fermentum libero sit amet ex faucibus, eget iaculis leo pellentesque. Nam in turpis accumsan, malesuada felis sed, pellentesque mauris. Fusce vitae libero felis. Donec id neque vitae eros bibendum cursus at id ipsum. Duis quis ultricies dui, vel pulvinar eros. Quisque facilisis sollicitudin libero at semper. Sed congue nec justo vitae posuere."
+        },
+        "textAlign": {
+          "en-US": "Left"
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "d3m3q3DYtiSOcimSgomme",
+        "type": "Entry",
+        "createdAt": "2018-08-22T17:30:59.044Z",
+        "updatedAt": "2018-08-22T17:32:18.210Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 14,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 13,
+        "firstPublishedAt": "2018-08-22T17:32:18.210Z",
+        "publishedAt": "2018-08-22T17:32:18.210Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "route": {
+          "en-US": "/example-2"
+        },
+        "title": {
+          "en-US": "Example 2"
+        },
+        "enabled": {
+          "en-US": true
+        },
+        "blocks": {
+          "en-US": [
+            {
+              "sys": {
+                "type": "Link",
+                "linkType": "Entry",
+                "id": "1vbIRjKUAQmU6cc6IcsKka"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "id": "1vbIRjKUAQmU6cc6IcsKka",
+        "type": "Entry",
+        "createdAt": "2018-08-22T17:31:11.108Z",
+        "updatedAt": "2018-08-22T17:32:15.612Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 29,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "publishedVersion": 28,
+        "firstPublishedAt": "2018-08-22T17:32:15.612Z",
+        "publishedAt": "2018-08-22T17:32:15.612Z",
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "contentAreaBlock"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Example2_Content"
+        },
+        "content": {
+          "en-US": "# Example Page 2\n\nEtiam elementum nulla dui, eget fermentum ante tincidunt faucibus. Praesent sodales massa ac lectus eleifend, ac feugiat massa porttitor. Fusce imperdiet maximus magna, vel cursus nunc tristique in.\n\n1. Aenean a felis non risus lacinia lobortis ut congue orci.\n2. Donec non tortor vitae augue sodales euismod.\n3. Nam sit amet elit quis orci consequat pellentesque.\n4. Aliquam vitae ex sollicitudin, fermentum ligula eget, iaculis nibh.\n5. Curabitur rhoncus diam vitae dictum varius.\n6. Sed ultrices tellus vitae bibendum faucibus.\n"
+        },
+        "textAlign": {
+          "en-US": "Left"
+        }
+      }
+    }
+  ],
+  "assets": [
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "7gVtvk0NSlP02gfWRxNQma",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "createdAt": "2018-08-17T19:37:43Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedAt": "2018-08-17T19:37:43Z"
+      }
+    }
+  ],
+  "webhooks": [
+    {
+      "name": "Update site",
+      "url": "https://eb34341abj.execute-api.ap-southeast-2.amazonaws.com/production/exportAll",
+      "httpBasicUsername": null,
+      "topics": [
+        "Entry.publish",
+        "Entry.unpublish",
+        "Asset.publish",
+        "Asset.unpublish"
+      ],
+      "filters": null,
+      "transformation": null,
+      "sys": {
+        "type": "WebhookDefinition",
+        "id": "4OQm5eI0gqHiyAgGGTpqKq",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "5m7unljsll1u"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "createdAt": "2018-08-18T16:28:09Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "0SuzUsvWYEFfJbZmdNjaNu"
+          }
+        },
+        "updatedAt": "2018-08-18T16:28:09Z"
+      },
+      "headers": [
+      ]
+    }
+  ],
+  "roles": [
+  ]
+}

@@ -1,0 +1,62 @@
+service: ${file(../package.json):name}-deploy
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules:
+      forceInclude:
+        # Packages from parent required for build
+        - next
+        - contentful
+        - styled-components
+        - ramda
+        - shorthash
+        - react-markdown
+        - next-routes
+      forceExclude:
+        - aws-sdk
+        - webpack
+        - dotenv-webpack
+
+  bucket: ${opt:bucket}
+  distributionId: ${opt:distributionId}
+  tempDir: /tmp/static-build
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'development'}
+  region: ap-southeast-2
+  environment:
+    SERVERLESS_EXEC: true
+    NODE_ENV: production
+    BUCKET_NAME: ${self:custom.bucket}
+    TEMP_DIR: ${self:custom.tempDir}
+    DIST_ID: ${self:custom.distributionId}
+    BABEL_CACHE_PATH: ${self:custom.tempDir}/babel-cache
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "arn:aws:s3:::${self:custom.bucket}"
+    - Effect: Allow
+      Action:
+        - cloudfront:CreateInvalidation
+      Resource: "*"
+
+functions:
+  exportAll:
+    handler: handler.exportAll
+    events:
+      - http:
+          method: post
+          path: exportAll

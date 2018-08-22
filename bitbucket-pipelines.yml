@@ -1,0 +1,48 @@
+pipelines:
+  branches:
+    '{production,staging}':
+      - step:
+          name: Build static html files
+          image: node:8.11-slim
+          caches:
+            - node
+          script:
+            # CONFIG ENV VARIABLES
+            - . ./bitbucket-pipelines-env.sh
+
+            - npm install
+            - rm -rf .next out # Remove built directories from previous builds (prevent EEXIST error)
+            - npm run export
+            - cp env/$BITBUCKET_BRANCH/* out
+          artifacts:
+            - .next/** # Bundle from which to build on the fly in lambda
+            - out/** # Initial built files for s3
+            - node_modules/** # parent modules required to deploy serverless function
+      - parallel:
+        - step:
+            name: Deploy serverless function
+            image: node:8.11-slim
+            script:
+              # CONFIG ENV VARIABLES
+              - . ./bitbucket-pipelines-env.sh
+              
+              - cd deployment-functions
+              - npm install
+              - npm run deploy -- --stage $BITBUCKET_BRANCH --distributionId $CLOUDFRONT_DISTRIBUTION_ID --bucket $BUCKET_NAME
+        - step:
+            name: Deploy to S3
+            image: atlassian/pipelines-awscli
+            # Sync to s3, update cache-control header for /static & /_next. Clear cloudfront cache.
+            # --metadata-directive REPLACE https://github.com/aws/aws-cli/issues/652
+            script:
+              # expecting bucket names as BUCKET_NAME_PRODUCTION & BUCKET_NAME_STAGING
+              # expecting cloudfront distro as CLOUDFRONT_DISTRIBUTION_ID_PRODUCTION & CLOUDFRONT_DISTRIBUTION_ID_STAGING
+              # CONFIG ENV VARIABLES
+              - . ./bitbucket-pipelines-env.sh
+
+              - aws s3 sync out/ s3://$BUCKET_NAME --acl public-read --delete
+              - aws s3 cp s3://$BUCKET_NAME/static/ s3://$BUCKET_NAME/static/ --acl public-read --metadata-directive REPLACE --cache-control 'max-age=31104000' --recursive
+              - aws s3 cp s3://$BUCKET_NAME/_next/ s3://$BUCKET_NAME/_next/ --acl public-read --metadata-directive REPLACE --cache-control 'max-age=31104000' --recursive
+              - echo redirect > out/404.html
+              - aws s3 cp out/404.html s3://$BUCKET_NAME --acl public-read --website-redirect '/'
+              - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths /

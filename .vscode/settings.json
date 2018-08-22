@@ -1,0 +1,12 @@
+{
+    "stylelint.additionalDocumentSelectors": [
+        "javascriptreact"
+    ],
+    "stylelint.enable": true,
+    "css.validate": false,
+    "scss.validate": false,
+    "files.associations": {
+        "**/pages/*.js": "javascriptreact",
+        "**/components/*.js": "javascriptreact"
+    }
+}
