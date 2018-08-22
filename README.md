@@ -74,6 +74,7 @@ npm run aws:stack-info production
 
 ## Configure pipeline for new environment
 Add the following [environment variables](https://confluence.atlassian.com/bitbucket/environment-variables-794502608.html#Environmentvariables-User-definedvariables) to your bitbuket pipeline config:
+
 (Environment specific variables should be defined with the environment name following)
 ```
 CLOUDFRONT_DISTRIBUTION_ID_PRODUCTION=xxx
@@ -81,6 +82,7 @@ BUCKET_NAME_PRODUCTION=xxx
 AWS_ACCESS_KEY_ID_PRODUCTION=xxx
 AWS_SECRET_ACCESS_KEY_PRODUCTION=xxx
 ```
+
 (Contentful variables are the same for all environments)
 ```
 CONTENTFUL_ACCESS_TOKEN=xxx
