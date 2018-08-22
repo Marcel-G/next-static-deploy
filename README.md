@@ -36,6 +36,13 @@ contentful space import \
   --space-id <space-id>
 ```
 
+## Run locally
+Test the project on your local machine:
+```
+npm install
+npm run dev
+```
+
 ## Create an environment
 Create a `production` environment in AWS:
 ```
