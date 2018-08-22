@@ -20,7 +20,7 @@ Deploying code changes is done with bitbucket pipelines. The pipeline will build
   - Install [Serverless](https://serverless.com/framework/docs/providers/aws/guide/installation)
   - Configure [AWS CLI](https://aws.amazon.com/cli) (Should already be done from following Serverless install guide)
   - Push this code to a new [Bitbucket](https://bitbucket.org) repo and enable [Pipelines Feature](https://bitbucket.org/product/features/pipelines)
-  - Create a new [Contentful](https://www.contentful.com)
+  - Create a new [Contentful](https://www.contentful.com) space
   - Install [contentful-cli](https://github.com/contentful/contentful-cli)
 
 ## Configuration
