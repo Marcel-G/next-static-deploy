@@ -115,7 +115,7 @@ npm run aws:stack-info production
 Setup a [Contenful webhook](https://www.contentful.com/developers/docs/concepts/webhooks#create-and-configure-a-webhook) to fire whenever an entry is published or unpublished.
 The url should be the `<endpoint>/exportAll` with `POST` method.
 
-It is a good idea to [setup an API key](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html) in api gateway for Contentful to secure the endpoint. Add they key as `x-api-key` header in the webhook config.
+It is a good idea to [setup an API key](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html) in api gateway for Contentful to secure the endpoint. Add the key as `x-api-key` header in the webhook config.
 
 # Technology
   - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
