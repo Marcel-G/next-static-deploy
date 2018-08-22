@@ -1073,49 +1073,6 @@
     }
   ],
   "webhooks": [
-    {
-      "name": "Update site",
-      "url": "https://eb34341abj.execute-api.ap-southeast-2.amazonaws.com/production/exportAll",
-      "httpBasicUsername": null,
-      "topics": [
-        "Entry.publish",
-        "Entry.unpublish",
-        "Asset.publish",
-        "Asset.unpublish"
-      ],
-      "filters": null,
-      "transformation": null,
-      "sys": {
-        "type": "WebhookDefinition",
-        "id": "4OQm5eI0gqHiyAgGGTpqKq",
-        "version": 0,
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "5m7unljsll1u"
-          }
-        },
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0SuzUsvWYEFfJbZmdNjaNu"
-          }
-        },
-        "createdAt": "2018-08-18T16:28:09Z",
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "0SuzUsvWYEFfJbZmdNjaNu"
-          }
-        },
-        "updatedAt": "2018-08-18T16:28:09Z"
-      },
-      "headers": [
-      ]
-    }
   ],
   "roles": [
   ]

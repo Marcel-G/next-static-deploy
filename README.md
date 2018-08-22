@@ -105,6 +105,18 @@ By creating a `production` branch and pushing a change to it, the pipeline will 
   git push origin production
 ```
 
+## Contentful webhook
+The final step is to setup Contentful to update the site whenever content is changed in the cms.
+After the first pipeline has run, the serverless endpoint should display when getting stack info:
+```
+npm run aws:stack-info production
+=> https://xxx.execute-api.ap-southeast-2.amazonaws.com/production
+```
+Setup a [Contenful webhook](https://www.contentful.com/developers/docs/concepts/webhooks#create-and-configure-a-webhook) to fire whenever an entry is published or unpublished.
+The url should be the `<endpoint>/exportAll` with `POST` method.
+
+It is a good idea to [setup an API key](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html) in api gateway for Contentful to secure the endpoint. Add they key as `x-api-key` header in the webhook config.
+
 # Technology
   - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
   - [Serverless](https://serverless.com)
