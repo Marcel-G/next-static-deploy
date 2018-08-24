@@ -27,7 +27,7 @@ Deploying code changes is done with bitbucket pipelines. The pipeline will build
 
 ## Configuration
 1. Change the package name in `package.json` this will be used to name the stack in AWS.
-2. Create a Contentful [access token](https://www.contentful.com/developers/docs/references/authentication/). Save Contentful token details in `.env` (reference `.env.example`)
+2. Create a Contentful [access token](https://www.contentful.com/developers/docs/references/authentication/) and save details in `.env` (reference `.env.example`)
 
 ## Import example space into Contentful
 Import example space content from this repo into your new space using contentful-cli:
