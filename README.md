@@ -112,7 +112,7 @@ By creating a `production` branch and pushing a change to it, the pipeline will 
 The final step is to setup Contentful to update the site whenever content is changed in the cms.
 After the first pipeline has run, the serverless endpoint should display when getting stack info:
 ```
-npm run aws:stack-info production
+npm run aws:sls:stack-info production
 => https://xxx.execute-api.ap-southeast-2.amazonaws.com/production
 ```
 Setup a [Contenful webhook](https://www.contentful.com/developers/docs/concepts/webhooks#create-and-configure-a-webhook) to fire whenever an entry is published or unpublished.
