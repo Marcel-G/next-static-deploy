@@ -48,7 +48,7 @@ npm run dev
 ## Create an environment
 Create a `production` environment in AWS:
 ```
-git submodule update --init --recursive // install submodules
+git submodule update --init --recursive # install submodules
 npm run aws:create-stack <domain name> production
 ```
 When the stack has finished being created, get the stack information:
