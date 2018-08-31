@@ -1,0 +1,3 @@
+[submodule "aws-static-environment"]
+	path = aws-static-environment
+	url = https://github.com/Marcel-G/aws-static-environment

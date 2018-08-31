@@ -6,8 +6,8 @@
     "path": false
   },
   "scripts": {
-    "aws:create-stack": "./aws/create-stack.sh",
-    "aws:stack-info": "./aws/stack-info.sh",
+    "aws:create-stack": "./aws-static-environment/create-stack.sh",
+    "aws:stack-info": "./aws-static-environment/stack-info.sh",
     "dev": "node src/server",
     "prebuild": "npm run lint:js && npm run lint:css",
     "build": "next build",
