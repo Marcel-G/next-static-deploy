@@ -1,5 +1,7 @@
 # Next Static Deploy
 
+[Live demo](https://d384jhtlh5i19d.cloudfront.net)
+
 This project shows a solution for hosting, deploying static next.js exports and allowing content updates post deployment using serverless. It's focus is to make deployments and creation of new environments as easy as possible.
 
 ## Why host static files?
@@ -25,7 +27,7 @@ Deploying code changes is done with bitbucket pipelines. The pipeline will build
 
 ## Configuration
 1. Change the package name in `package.json` this will be used to name the stack in AWS.
-2. Create a Contentful [access token](https://www.contentful.com/developers/docs/references/authentication/). Save Contentful token details in `.env` (reference `.env.example`)
+2. Create a Contentful [access token](https://www.contentful.com/developers/docs/references/authentication/) and save details in `.env` (reference `.env.example`)
 
 ## Import example space into Contentful
 Import example space content from this repo into your new space using contentful-cli:
@@ -116,7 +118,7 @@ npm run aws:stack-info production
 Setup a [Contenful webhook](https://www.contentful.com/developers/docs/concepts/webhooks#create-and-configure-a-webhook) to fire whenever an entry is published or unpublished.
 The url should be the `<endpoint>/exportAll` with `POST` method.
 
-It is a good idea to [setup an API key](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html) in api gateway for Contentful to secure the endpoint. Add they key as `x-api-key` header in the webhook config.
+It is a good idea to [setup an API key](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html) in api gateway for Contentful to secure the endpoint. Add the key as `x-api-key` header in the webhook config.
 
 # Technology
   - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
