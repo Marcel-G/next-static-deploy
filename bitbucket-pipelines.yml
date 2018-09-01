@@ -10,6 +10,7 @@ pipelines:
             # CONFIG ENV VARIABLES
             - . ./bitbucket-pipelines-env.sh
 
+            - npm config set strict-ssl false # temporary for npm cert issue
             - npm install
             - rm -rf .next out # Remove built directories from previous builds (prevent EEXIST error)
             - npm run export
