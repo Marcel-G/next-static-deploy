@@ -43,6 +43,6 @@ pipelines:
               - aws s3 sync out/ s3://$BUCKET_NAME --acl public-read --delete
               - aws s3 cp s3://$BUCKET_NAME/static/ s3://$BUCKET_NAME/static/ --acl public-read --metadata-directive REPLACE --cache-control 'max-age=31104000' --recursive
               - aws s3 cp s3://$BUCKET_NAME/_next/ s3://$BUCKET_NAME/_next/ --acl public-read --metadata-directive REPLACE --cache-control 'max-age=31104000' --recursive
-              - echo redirect > out/404.html
-              - aws s3 cp out/404.html s3://$BUCKET_NAME --acl public-read --website-redirect '/'
+              - echo redirect > out/error.html
+              - aws s3 cp out/error.html s3://$BUCKET_NAME --acl public-read --website-redirect '/'
               - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths /
