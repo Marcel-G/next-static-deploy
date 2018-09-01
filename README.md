@@ -1,6 +1,6 @@
 # Next Static Deploy
 
-[Live demo](https://d384jhtlh5i19d.cloudfront.net)
+[Live demo](https://d3u0ytk9e9tyfe.cloudfront.net)
 
 This project shows a solution for hosting, deploying static next.js exports and allowing content updates post deployment using serverless. It's focus is to make deployments and creation of new environments as easy as possible.
 
