@@ -28,6 +28,8 @@ pipelines:
               - . ./bitbucket-pipelines-env.sh
               
               - cd deployment-functions
+
+              - npm config set strict-ssl false # temporary for npm cert issue
               - npm install
               - npm run deploy -- --stage $BITBUCKET_BRANCH --distributionId $CLOUDFRONT_DISTRIBUTION_ID --bucket $BUCKET_NAME
         - step:
