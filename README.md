@@ -13,6 +13,7 @@ The use case for this solution is a website where content is regularly being edi
 To allow for frequent content updates, rather than rebuilding the entire codebase from source and redeploying; this solution executes only next.js export in a serverless function. It's not necessary to rebuild the next.js bundles since no code changes have been made. This means content changes can be made very rapidly and frequently.
 
 The stack consists of an AWS S3 bucket and CloudFront distribution. Included in the repo is a CloudFormation template for creating this stack with ease. This makes it trivial to create new environments as the need arises.
+More information on the stack at [Marcel-G/aws-static-environment](https://github.com/Marcel-G/aws-static-environment)
 
 Deploying code changes is done with bitbucket pipelines. The pipeline will build next.js project, deploy the serverless function to handle content changes as well as populate the S3 bucket with the initial next.js export. The pipeline is setup by default to run whenever changes are pushed to `production` or `staging` branches.
 
